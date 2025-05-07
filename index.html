@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salvatore Rinella Diagnostic Engineer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">Salvatore Rinella</div>
+    <div class="nav-links">
+      <a href="#chi-sono">Who I am</a>
+      <a href="#competenze">Skills</a>
+      <a href="#esperienze">Work Experiences</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contatti">Contact me</a>
+    </div>
+    <div class="menu-icon" onclick="toggleMenu()">
+      <div></div><div></div><div></div>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#chi-sono">Who I Am</a>
+    <a href="#competenze">Skills</a>
+    <a href="#esperienze">Work Experiences</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contatti">Contact me</a>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="profile-pic"></div>
+    <div class="header-text">
+      <h1>Salvatore Rinella</h1>
+      <p>Diagnostic Data Science Analyst</p>
+    </div>
+  </header>
+
+  <!-- Sezione Chi Sono -->
+  <section id="chi-sono">
+    <h2 class="section-title">Who I Am</h2>
+    <div class="content-card">
+      <p>
+        Sono un professionista con esperienza in [...]. Mi occupo di [...],
+        con particolare attenzione a [...]. Amo lavorare su progetti creativi e risolvere problemi in modo innovativo.
+      </p>
+    </div>
+  </section>
+
+  <!-- Sezione Competenze -->
+  <section id="competenze">
+    <h2 class="section-title">Skills</h2>
+    <div class="content-card">
+      <p>Skill tecnica 1, Skill tecnica 2, Soft skill 1, Conoscenza strumenti/software</p>
+    </div>
+  </section>
+
+  <!-- Sezione Esperienze -->
+  <section id="esperienze">
+    <h2 class="section-title">Work Experiences</h2>
+    <div class="content-card">
+      <p><strong>Azienda 1</strong> – Ruolo (2020–2023): descrizione breve delle mansioni.</p>
+      <p><strong>Azienda 2</strong> – Ruolo (2017–2020): attività principali e risultati raggiunti.</p>
+      <p><strong>Freelance</strong> – (2023–oggi): progetti indipendenti e consulenze.</p>
+    </div>
+  </section>
+
+  <!-- Sezione Portfolio -->
+  <section id="portfolio">
+    <h2 class="section-title">My bands</h2>
+    <div class="portfolio-gallery">
+      <div class="portfolio-item">
+        <img src="Almost_Monkey.jpeg" alt="Almost Monkey" />
+        <div class="band-name">Almost Monkey</div>
+        <audio id="audio-almost-monkey" src="Almost_Monkey.mp3" preload="auto"></audio>
+      </div>
+      <div class="portfolio-item">
+        <img src="Again_I_Hear.jpg" alt="Again I Hear" />
+        <div class="band-name">Again I Hear</div>
+        <audio id="audio-again-i-hear" src="Again_I_Hear.mp3" preload="auto"></audio>
+      </div>
+      <div class="portfolio-item">
+        <img src="defletchers.jpg" alt="Defletchers" />
+        <div class="band-name">Defletchers</div>
+        <audio id="audio-defletchers" src="defletchers.mp3" preload="auto"></audio>
+      </div>
+      <div class="portfolio-item">
+        <img src="fingerbang.jpg" alt="Fingerbang" />
+        <div class="band-name">Fingerbang</div>
+        <audio id="audio-fingerbang" src="fingerbang.mp3" preload="auto"></audio>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <div class="lightbox-content"></div>
+  </div>
+
+  <!-- Sezione Contatti -->
+  <section id="contatti">
+    <h2 class="section-title">Contact me</h2>
+    <div class="content-card">
+      <p>Email: <a href="mailto:rinellasalvatore@gmail.com">rinellasalvatore@gmail.com</a></p>
+      <p>Phone: +44 07718695256</p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/salvatore-rinella-88927395/" target="_blank">linkedin.com/in/salvatore-rinella-88927395</a></p>
+    </div>
+
+    <div class="content-card">
+      <h3>Send me a message</h3>
+      <form action="https://formspree.io/f/yourformid" method="POST" class="contact-form">
+        <div class="form-group">
+          <label for="nome">Your Name</label>
+          <input type="text" id="nome" name="nome" required />
+        </div>
+        <div class="form-group">
+          <label for="telefono">Phone Number</label>
+          <input type="tel" id="telefono" name="telefono" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-message">
+          <label for="messaggio">Your Message</label>
+          <textarea id="messaggio" name="messaggio" rows="4" required></textarea>
+          <button type="submit">Invia</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2025 Salvatore Rinella - Tutti i diritti riservati</p>
+  </footer>
+  
+  <!-- Script -->
+  <script>
+    function toggleMenu() {
+      document.getElementById("mobileMenu").classList.toggle("show");
+    }
+  
+    const lightbox = document.getElementById('lightbox');
+    const lightboxContent = document.querySelector('.lightbox-content');
+  
+    const bandDescriptions = {
+    "Almost Monkey": "Almost Monkey is a ska-core band from Palermo, Italy, active since 2005. Formed after the breakup of Coska Loska, they stand out in the Palermo music scene for their unique sound, blending ska, hardcore, rocksteady, psychobilly, and rock n roll, often with pirate-themed lyrics. The band consists of seven members: Filippo (vocals), Salvo and Francesco (guitars), Roberto (bass), Claudio (saxophone), Antonio (trumpet), and Giorgio (drums). In 2006, they released their album Time To React, featuring eleven tracks recorded at Circle of Power Studios. The album received positive reviews from the Italian alternative music press and led the band to perform alongside well-known groups such as Bambole di Pezza, Casino Royale, and Arpioni. They also took part in festivals, including the Forst Beer Festival in Palermo. Almost Monkey has contributed to several compilations, including I Dont Wanna Hear It (Rotten Orange Zest), Then He Said... Phee-O (PHEE-O Records), and Punkronica (Angus Records). They are currently working on their second album and continue to perform live, planning a tour across Italy. For more details, you can visit their profiles on MusicBrainz or Discogs.",
+    "Again I Hear": "Again I Hear is a melodic hardcore band from Palermo, Italy. Formed in May 2011, they recorded their first three-track EP in August of the same year. In June 2014, they released their first full album, The Illusion of Choice, available on Bandcamp (https://againihear.bandcamp.com/album/the-illusion-of-choice). The band's sound is influenced by California-based groups like NOFX and Blink-182, with lyrics that address personal and social issues. An example of their style is the track Swigmore University, available on Bandcamp (https://againihear.bandcamp.com/track/swigmore-university). In 2012, they participated in the Merry Crisis Punk Rocka event in Palermo, sharing the stage with other local bands. Recently, on April 5, Dave Agrò released his first solo album, which includes acoustic rearrangements of songs from Again I Hear and Raising Compromise. For more information, you can visit their Facebook page (https://www.facebook.com/againihear/) or listen to their music on Bandcamp (https://againihear.bandcamp.com/)",
+    "Defletchers": "Defletchers is a rock band based in Palermo, Italy, known for their sound influenced by bands like Foo Fighters. The band consists of four members, bringing together a powerful mix of alternative and hard rock elements. With a dynamic style that blends energy and melody, Defletchers have become a notable part of the local rock scene, delivering engaging performances and catchy tunes.",
+    "Fingerbang":"Fingerbang is a punk rock band from Palermo, Italy, active since 2004. Formed with the intention of bringing a fast and melodic sound to the local hardcore scene, they were influenced by bands like NOFX, Belvedere, and No Use For A Name. The original lineup included Giorgio V, Salvo, Dario, and Giorgio P (last.fm).In 2005, they released their first six-track demo titled Fingerbanging!, followed by the album Murderer in 2006, distributed through the Spanish label Skatepunkers. This album was described as an example of fast and melodic skate punk, with tracks ranging from 1 to 3 minutes, characterized by energetic riffs and direct lyrics (skatepunkers.bandcamp.com). Despite their short career, Fingerbang made a mark on the Italian punk scene, appreciated for their energy and ability to blend speed and melody in an hardcore context. To listen to their music, you can visit their profile on Bandcamp."
+  };
+  
+    let currentAudio = null; // Variabile per tenere traccia dell'audio attivo
+    let currentBand = null; // Variabile per tenere traccia della band attualmente selezionata
+  
+    document.querySelectorAll('.portfolio-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const img = item.querySelector('img');
+        const band = item.querySelector('.band-name').innerText;
+        const desc = bandDescriptions[band] || "Nessuna descrizione disponibile.";
+        
+        // Trova l'elemento audio associato alla band
+        const audio = item.querySelector('audio');
+        
+        // Se è la stessa band che è già in riproduzione
+        if (currentBand === band) {
+          // Se l'audio è in pausa, lo facciamo ripartire dall'inizio
+          if (audio.paused) {
+            audio.currentTime = 0; // Riavvolge l'audio all'inizio
+            audio.play(); // Riproduce la canzone
+          } else {
+            // Se l'audio è già in riproduzione, facciamo niente
+            return;
+          }
+        } else {
+          // Se è una band diversa o un nuovo clic sulla stessa band
+          document.querySelectorAll('audio').forEach(a => a.pause()); // Ferma tutti gli audio
+  
+          if (audio) {
+            audio.play();
+            audio.currentTime = 0;  // Riavvolge l'audio all'inizio
+            audio.volume = 1;  // Imposta il volume a normale
+            currentAudio = audio;  // Salva l'audio corrente
+            currentBand = band;  // Salva la band corrente
+          }
+        }
+  
+        lightboxContent.style.setProperty('--bg-image', `url('${img.src}')`);
+        lightboxContent.innerHTML = `<div class="lightbox-description">${desc}</div>`;
+        lightbox.classList.add('show');
+      });
+    });
+  
+    // Funzione per fermare l'audio
+    function stopAudio() {
+      if (currentAudio) {
+        currentAudio.pause();  // Ferma l'audio
+        currentAudio.currentTime = 0; // Riavvolge l'audio per il prossimo avvio
+      }
+    }
+  
+    // Chiusura della lightbox (quando clicchi sullo sfondo o premi Escape)
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        stopAudio();  // Ferma l'audio quando si chiude la lightbox
+        currentBand = null; // Resetta la band corrente
+        lightbox.classList.remove('show');
+      }
+    });
+  
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        stopAudio();  // Ferma l'audio quando si preme Escape
+        currentBand = null; // Resetta la band corrente
+        lightbox.classList.remove('show');
+      }
+    });
+  
+    // Se l'utente lascia la pagina (o ricarica), fermiamo l'audio
+    window.addEventListener('beforeunload', () => {
+      stopAudio();  // Ferma l'audio
+    });
+  </script>
+   
+  
+  </body>
+  </html>
+      
